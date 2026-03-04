@@ -124,11 +124,10 @@
     <!-- PDF生成加载提示 -->
     <div class="loading" id="loading"><div class="spinner"></div><p>正在生成PDF，请稍候...</p></div>
     
-    <!-- 功能按钮 -->
+    <!-- 功能按钮 - 已删除“打印页面”按钮 -->
     <div class="controls">
         <button class="control-btn generate" id="generateQuestions">随机出题</button>
         <button class="control-btn" id="downloadPdf">下载PDF</button>
-        <button class="control-btn print" onclick="window.print()">打印页面</button>
     </div>
     
     <!-- 主内容区：练习题卡片 -->
@@ -593,7 +592,7 @@
             document.getElementById('downloadPdf').addEventListener('click', downloadPDF);
         });
 
-        // 打印时隐藏控制按钮
+        // 打印时隐藏控制按钮 (虽已删除打印按钮，但保留以防万一)
         window.addEventListener('beforeprint', function() { document.querySelector('.controls').style.display = 'none'; });
         window.addEventListener('afterprint', function() { document.querySelector('.controls').style.display = 'flex'; });
     </script>
